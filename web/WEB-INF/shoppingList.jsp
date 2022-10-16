@@ -16,14 +16,15 @@
         <h1>Shopping List</h1>
         <p>Hello, ${username} <a href="ShoppingList?action=logout">Logout</a></p>
 
-        <form action="" method="POST">
-            <h2>List:</h2>
+        <h2>List:</h2>
+        <form action="ShoppingList" method="POST">
 
             <label>Add item:</label>
-            <input type="text" name="item" value="">
+            <input type="text" name="item">
             <input type="submit" value="Add">
             <input type="hidden" name="action" value="add">
         </form>
+        <br>
         <c:if test="${not empty items}">
             <form action="ShoppingList" method="POST">
                 <c:forEach var="items" items="${items}">
