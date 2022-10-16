@@ -17,16 +17,18 @@
         <p><a href="ShoppingList?action=logout">Logout</a></p>
         
         <form action="" method="POST">
-            <h2>Add Item</h2>
-            <input type="text" name="item"><input type="submit" value="Add Item">
+            <h2>Add Item:</h2>
+            <input type="text" name="item" value="">
+            <input type="submit" value="Add Item">
             <input type="hidden" name="action" value="add">
         </form>
         
-        <form action="" method="POST">
-            <ul>
-                <li></li>
-                
-            </ul>
+        <form action="ShoppingList" method="POST">
+            <c:forEach var="items" items="${items}">
+                <input type="radio" name="itemSelected" value="${items}">
+                ${items}
+                <br>
+            </c:foreach>
             <input type="submit" value="Delete">
             <input type="hidden" name="action" value="delete">            
         </form>
